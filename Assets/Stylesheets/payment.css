@@ -1,0 +1,783 @@
+﻿main {
+    background-attachment: fixed;
+/*    background-image: url('../Images/course/courseImg/CS-0131-EN/image.jpg');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 5vh 0;
+}
+
+section#printHeading {
+    display: none;
+}
+
+section#paymentCard {
+    width: 80vw;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+    section#paymentCard h3.paymendCardTitle {
+        font-size: 2vw;
+        text-align: center;
+        font-weight: bold;
+        background-color: rgb(0,0,0,0.8);
+        backdrop-filter: blur(0.3vw);
+        padding: 2vw;
+        border-radius: 1vw 1vw 0 0;
+    }
+
+    /*
+        ------------------------
+        PAYMENT BREADCRUMB STEPS
+        ------------------------
+    */
+
+    section#paymentCard div#paymentStep {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        background-color: rgb(0,0,0,0.8);
+        backdrop-filter: blur(0.3vw);
+    }
+
+div#paymentStep div.step {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    font-size: 1vw;
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+}
+
+    div#paymentStep div.step.inactive {
+        opacity: 0.3; /* Inactive steps have lower opacity */
+    }
+
+    div#paymentStep div.step.active {
+        opacity: 1; /* Active and passed steps have full opacity */
+    }
+
+div .step p.stepLabel {
+    font-weight: lighter;
+    font-size: 0.8vw;
+    color: rgb(255,255,255,0.7);
+    margin-bottom: 1vh;
+    text-align: center;
+}
+
+div.step div.bullet {
+    width: 2vw;
+    height: 2vw;
+    border: 0.1vw solid #fff;
+    display: inline-block;
+    border-radius: 50vw;
+    position: relative;
+    transition: 0.2s;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+    div.step div.bullet.passed {
+        background: rgb(255,255,255);
+    }
+
+    div.step div.bullet span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    div.step div.bullet.active span {
+        display: none;
+    }
+
+#paymentStep .step:not(:first-child) .bullet::before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    right: 200%;
+    height: 0.5vh;
+    width: 13vw;
+    background: rgb(0,255,255,0.3);
+}
+
+div.step div.bullet.passed::before {
+    background: rgb(111, 255, 255,1);
+}
+
+div .step div.bullet.active::before {
+    background: #d43f8d;
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 1;
+    animation: animate 0.3s linear forwards;
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+div.step i.check {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    font-size: 1vw;
+    transform: translate(-50%, -50%);
+    display: none;
+    color: #000 !important;
+}
+
+    div.step i.check.active {
+        display: block;
+    }
+
+/*
+        ------------
+        PAYMENT FORM
+        ------------
+    */
+div.paymentForm_wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+div#paymentForm {
+    overflow: visible;
+    display: flex;
+    flex-flow: row nowrap; /*CHANGE TO ROW LATER*/
+    width: fit-content;
+}
+
+div.formPage {
+    border-radius: 0 0 1vw 1vw;
+    padding: 2vw;
+    width: 80vw;
+    background-color: rgb(0,0,0,0.8);
+    backdrop-filter: blur(0.3vw);
+    height: fit-content;
+    transition: all 0.5s ease;
+    transition: opacity 0.5s ease-in-out;
+}
+
+    div.formPage.active {
+        opacity: 1;
+    }
+
+    div.formPage h4.formPageTitle {
+        font-size: 1.1vw;
+        font-weight: lighter;
+        letter-spacing: 0.3vw;
+        text-align: center;
+    }
+
+    /*
+        --------------------
+        PAYMENT FORM CONTENT
+        --------------------
+    */
+    div.formPage div.formContent {
+        width: 100%;
+        padding-top: 5vh;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+
+div.formContenLeft {
+    width: 45%;
+}
+
+div.formContenRight {
+    width: 50%;
+}
+/*
+  ------------------------
+  1. PAYMENT SUMMARY
+  ------------------------
+*/
+
+div.courseEnrolImgTxt {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 2vw;
+}
+
+    div.courseEnrolImgTxt div.courseCardEnrolImg {
+        width: 50%;
+        height: auto;
+        border-radius: 1vw;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+div.courseCardEnrolNameDescPrice {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2vh;
+}
+
+    div.courseCardEnrolNameDescPrice .courseCardEnrolName {
+        font-size: 1.5vw;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    div.courseCardEnrolNameDescPrice .courseCardEnrolDesc {
+        font-size: 0.9vw;
+        color: rgb(255,255,255,0.7);
+        text-align: justify;
+    }
+
+div.courseCardEnrolPriceLabel_wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: auto;
+    gap: 0.5vw;
+    background-color: rgb(255,255,255,0.4);
+    width: fit-content;
+    padding: 3%;
+    color: #fff;
+    border-radius: 0.5vw;
+}
+
+    div.courseCardEnrolPriceLabel_wrapper p.courseCardEnrolLabel {
+        font-size: 0.9vw;
+    }
+
+    div .courseCardEnrolPriceLabel_wrapper .courseCardEnrolPrice {
+        font-size: 1.3vw;
+    }
+
+div.courseEnrolDetails {
+    margin-top: 5vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    gap: 1vw;
+    width: 100%;
+}
+
+    div.courseEnrolDetails div.courseEnrolDetailsBox {
+        background: rgb(0,0,0,0.4);
+        border-radius: 0.5vw;
+        padding: 2% 10%;
+        padding: 2%;
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 0.5vw;
+        border: 0.15vw solid rgb(255,255,255,0.3);
+    }
+
+div.courseEnrolDetailsBox * {
+    font-size: 0.85vw;
+}
+
+    div.courseEnrolDetailsBox p.courseEnrolLabel {
+        opacity: 0.7;
+        font-weight: lighter;
+    }
+
+    div.courseEnrolDetailsBox .courseEnrolContent {
+        font-weight: bold;
+    }
+
+div.billingBtn_wrapper {
+    gap: 5vh;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+    div.billingBtn_wrapper div.billingSummary_wrapper {
+        padding: 1% 5%;
+        background: rgb(255,255,255,0.7);
+        color: #000;
+        border-radius: 1vw;
+    }
+
+div.billingSummary,
+div.billingGrandTotal {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 2vh 0;
+    font-size: 1vw;
+    align-items: center;
+}
+
+    div.billingSummary *,
+    div.billingGrandTotal * {
+        font-family: HelvLight;
+    }
+
+.billingLabel {
+    font-weight: bold;
+}
+
+div.billingGrandTotal .billingAmt {
+    background-color: rgb(0,0,0,0.3);
+    padding: 2%;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 0.5vw;
+}
+
+div.billingGrandTotal::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 0.1vw dashed #000;
+}
+
+div.backNextBtn_wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 2vw;
+}
+
+    div.backNextBtn_wrapper input[type=button],
+    div.backNextBtn_wrapper input[type=submit] {
+        background-color: rgb(255,255,255,0.7);
+        border: none;
+        border-radius: 0.5vw;
+        color: #000;
+        font-size: 1.2vw;
+        width: 25%;
+        height: 7vh;
+        cursor: pointer;
+        text-align: center;
+        place-content: center;
+        font-family: Poppins, HelvLight;
+        transition: all 0.2s ease;
+    }
+
+        div.backNextBtn_wrapper > input[type=button]:hover {
+            background-color: #fff;
+        }
+
+    div.backNextBtn_wrapper .payPrevBtn {
+        background: none;
+        color: #fff;
+        border: 0.1vw solid #fff;
+        cursor: pointer;
+        width: 25%;
+        height: 7vh;
+        font-size: 1.2vw;
+        border-radius: 0.5vw;
+        transition: all 0.2s ease;
+    }
+
+        div.backNextBtn_wrapper .payPrevBtn:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+
+/*
+  -------------------------------------
+  2. PAYMENT DETAILS [METHOD + DETAILS]
+  -------------------------------------
+*/
+div.paymentMeth_wrapper {
+    width: 44%;
+    height: auto;
+}
+
+.rblPaymentMeth {
+    display: flex;
+    border-right: 0.1vw solid rgb(255,255,255,0.5);
+    height: 100%;
+    place-items: center;
+}
+
+    .rblPaymentMeth input[type=radio] {
+        display: none;
+    }
+
+    .rblPaymentMeth tbody {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    /* Style the label to make it look clickable */
+    .rblPaymentMeth label {
+        cursor: pointer;
+        display: block !important; /* Optional: to make the label take up full width */
+        padding: 5%;
+        border-radius: 0.5vw; /* Optional: rounded corners */
+        background-color: rgb(255,255,255,0.3); /* Light background color */
+        transition: all 0.3s ease; /* Smooth transition */
+        font-size: 1.5vw;
+        font-weight: bold;
+        width: 10vw;
+        height: 10vw;
+        text-align: center;
+        place-content: center;
+    }
+
+        /* Change background color on hover for better UI */
+        .rblPaymentMeth label:hover {
+            background-color: rgb(255,255,255,0.5);
+        }
+
+/* Highlight the selected option */
+input[type="radio"]:checked + label {
+    background-color: rgb(255,255,255,0.8);
+    color: #000;
+}
+
+div.payment_TotalAmt {
+    border-radius: 0.4vw;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    background-color: rgb(245,245,245,0.4);
+    padding: 3vh 1.5vw;
+}
+
+    div.payment_TotalAmt h4 {
+        font-size: 1vw;
+        font-weight: lighter;
+        place-content: center;
+    }
+
+    div.payment_TotalAmt .amountLabel {
+        font-size: 1.5vw;
+        font-weight: bold;
+        user-select: text;
+    }
+
+div.payment_DefaultForm {
+    height: 20vh;
+    place-content: center;
+    text-align: center;
+}
+
+    div.payment_DefaultForm h3 {
+        font-size: 1vw;
+        font-weight: lighter;
+    }
+
+div.payment_CreditCardForm,
+div.payment_PayPalForm {
+    display: none;
+    flex-flow: column nowrap;
+    gap: 2vh;
+    margin: 5vh 0;
+}
+
+div.formContenRight .txtPayment {
+    padding: 3% 2%;
+    display: block;
+    width: 100%;
+    border-radius: 0.4vw;
+    border: none;
+    background-color: rgb(255,255,255,0.8);
+    color: #000;
+    font-size: 1.3vw;
+}
+
+div.password-box {
+    position: relative;
+}
+
+div.formContenRight button#togglePassword {
+    position: absolute;
+    right: 0;
+    background-color: rgb(0,0,0,0.8);
+    color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5vw;
+    opacity: 0.8;
+    height: 100%;
+    padding: 0 1vw;
+    border: none;
+    cursor: pointer;
+}
+
+/*
+  -------------------------------------
+  3. PAYMENT CONFIRMATION
+  -------------------------------------
+*/
+div.paymentConfirm_wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+    div.paymentConfirm_wrapper p {
+        font-size: 1vw;
+        font-weight: lighter;
+        display: inline;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    div.paymentConfirm_wrapper .labelCustEmail {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        display: inline;
+        font-size: 1vw;
+    }
+
+    div.paymentConfirm_wrapper div.paymentConfirm_OTP {
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+        padding: 5vh 0;
+    }
+
+div.paymentConfirm_OTP .otpBox {
+    background-color: rgb(255,255,255,0.2);
+    border: 0.1vw solid rgb(255,255,255,0.8);
+    width: 5vw;
+    height: 5vw;
+    font-size: 3vw;
+    text-align: center;
+    color: #fff;
+    border-radius: 0.5vw;
+}
+
+div.paymentConfirm_Btn {
+    display: flex;
+    gap: 2vw;
+    justify-content: center;
+}
+
+    div.paymentConfirm_Btn .paymentConfirmResendBtn,
+    div.paymentConfirm_Btn .paymentConfirmSubmitCode,
+    div.paymentConfirm_Btn .paymentConfirmCancel {
+        padding: 2vh 3vw;
+        border-radius: 0.5vw;
+        font-size: 1.2vw;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: #000;
+        place-content: center;
+    }
+
+    div.paymentConfirm_Btn .paymentConfirmResendBtn,
+    div.paymentConfirm_Btn .paymentConfirmCancel {
+        background: none;
+        border: 0.15vw solid rgb(255,255,255,0.8);
+        color: #fff
+    }
+
+        div.paymentConfirm_Btn .paymentConfirmResendBtn:hover,
+        div.paymentConfirm_Btn .paymentConfirmCancel:hover {
+            background: #fff;
+            color: #000;
+        }
+
+    div.paymentConfirm_Btn .paymentConfirmSubmitCode {
+        background: rgb(190,190,190);
+        border-width: 0.15vw;
+        border-color: transparent;
+    }
+
+        div.paymentConfirm_Btn .paymentConfirmSubmitCode:hover {
+            background: #fff;
+        }
+
+
+div.paymentConfirm_warning {
+    padding-bottom: 5vh;
+}
+
+    div.paymentConfirm_warning p {
+        font-size: 1vw;
+        font-weight: lighter;
+    }
+
+/*
+  -------------------------------------
+  4.1 PAYMENT COMPLETE [SUCCESS/FAILED]
+  -------------------------------------
+*/
+div.paymentComplete_wrapper {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1vw;
+}
+
+    div.paymentComplete_wrapper div.paymentStatus_img {
+        width: 6vw;
+        height: 6vw;
+        margin-left: auto;
+        margin-right: auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+p.paymentComplete_comment {
+    font-family: Quicksand, Arial, HelvLight;
+    font-size: 1vw;
+    line-height: 3vh;
+}
+
+    p.paymentComplete_comment .labelPaidCourseName {
+        font-size: 2vw;
+        font-weight: bold;
+        line-height: 10vh;
+        font-family: Poppins, Quicksand, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+div.paymentComplete_wrapper .accessCourseButton {
+    width: fit-content;
+    padding: 2vh 2vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: #000;
+    background: #fff;
+    border-radius: 1vw;
+    border: none;
+    cursor: pointer;
+    margin: 1vh auto;
+    margin-bottom: 4vh;
+}
+
+div.paymentComplete_receiptDetails {
+    width: 70%;
+    margin: 0 auto;
+    border-top: 0.15vw solid rgb(255,255,255,0.3);
+    padding: 5vh 0;
+}
+
+    div.paymentComplete_receiptDetails h3 {
+        text-align: left;
+        font-size: 1.5vw;
+        margin-bottom: 5vh;
+    }
+
+    div.paymentComplete_receiptDetails div.paymentComplete_receiptNoTransDatetime {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5vh;
+    }
+
+div.paymentComplete_receiptNoTransDatetime p {
+    font-weight: bold;
+    font-size: 1vw;
+}
+
+div.paymentComplete_receiptNoTransDatetime .receiptNoDatetime {
+    font-weight: lighter;
+}
+
+div.paymentComplete_receiptDetails div.paymentComplete_receiptRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 3vh 0;
+}
+
+div.paymentComplete_receiptRow .labelEnrolReceipt {
+    font-size: 1vw;
+}
+
+div.receiptSubtotalTax {
+    border-top: 0.1vw solid rgb(255,255,255,0.4);
+    border-bottom: 0.4vw double rgb(255,255,255,0.4);
+}
+
+div.receiptGrandTotal .labelEnrolReceipt {
+    font-weight: bold;
+    font-size: 1.3vw;
+}
+
+div.paymentComplete_btn {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+}
+
+    div.paymentComplete_btn > div {
+        font-size: 1.2vw;
+        background-color: none;
+        color: #000;
+        padding: 1vw;
+        border-radius: 0.5vw;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+        div.paymentComplete_btn > div.receiptPrintBtn {
+            border: 0.1vw solid #fff;
+            color: #fff;
+        }
+
+        div.paymentComplete_btn > div.browseCourseBtn {
+            background-color: rgb(255,255,255,0.7);
+            color: #000;
+        }
+
+        div.paymentComplete_btn > div:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+/*
+  -------------------------------------
+  4.1 PAYMENT SUCCESS
+  -------------------------------------
+*/
+
+/*
+  -------------------------------------
+  4.2 PAYMENT FAILED
+  -------------------------------------
+*/
+
+div.paymentFailed h3 {
+    font-size: 2vw;
+    padding: 2vh 0;
+}
+
+.cancelPaymentButton, .paymentFailed_btn {
+    padding: 5vh 0;
+    display: flex;
+    gap: 1vw;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+div.paymentFailed .cancelPaymentButton,
+div.paymentFailed .retryPaymentButton {
+    border: 0.1vw solid #fff;
+    font-size: 1.2vw;
+    font-family: Poppins, Quicksand;
+    font-weight: lighter;
+    padding: 1vw;
+    border-radius: 0.5vw;
+    min-width: 10vw;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+div.paymentFailed .cancelPaymentButton {
+    background: none;
+    color: #fff;
+}
+
+div .paymentFailed .retryPaymentButton {
+    color: #000;
+    background: rgb(255,255,255,0.6);
+}
+
+    div.paymentFailed .cancelPaymentButton:hover,
+    div.paymentFailed .retryPaymentButton:hover {
+        background: #fff;
+        color: #000;
+    }

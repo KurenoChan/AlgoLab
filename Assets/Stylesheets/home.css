@@ -1,0 +1,463 @@
+﻿/*
+    ------------------------
+    SECTION 1 : HERO SECTION
+    ------------------------
+*/
+
+section#hero div.hero_backImg {
+    background: url("../Images/home/home_hero.jpg") no-repeat center center;
+}
+
+/*
+    ----------------------------
+    SECTION 2 : FEATURED COURSES
+    ----------------------------
+*/
+section#featured {
+    padding: 5vh 0;
+}
+
+    section#featured div.featured_wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    section#featured div.featured_box {
+        box-shadow: inset 0 0 0.5vw 0.05vw #fff;
+        background-color: rgb(255,255,255,0.2);
+        width: 25vw;
+        text-align: center;
+        overflow: visible;
+        position: relative;
+        border-radius: 2vw 0 2vw 2vw;
+    }
+
+    section#featured div.featured_card {
+        width: 100%;
+        height: auto;
+        padding: 5%;
+    }
+
+div.featured_card div.featured_img {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    width: 100%;
+    height: 20vh;
+    overflow: hidden;
+    border-radius: 1vw;
+}
+
+div.featured_descBox {
+    padding: 1vh 1vw;
+}
+
+    div.featured_descBox h2 {
+        font-family: 'Poppins Bold';
+        text-align: left;
+        font-size: 1.4vw;
+        padding: 2vh 0;
+    }
+
+div.featured_rate {
+    text-align: left;
+}
+
+div.featured_desc {
+    font-family: Poppins;
+    height: 10vh;
+    overflow-y: auto;
+    margin: 2vh 0;
+    padding: 1vh 0;
+}
+
+    div.featured_desc p {
+        line-height: 2.5vh;
+        text-align: left;
+        font-size: 0.9vw;
+        font-weight: lighter;
+        color: rgb(255,255,255,0.8);
+    }
+
+div.featured_descBox div.btnToPage {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*
+    -------------------------
+    SECTION 3 : SEARCH COURSE
+    -------------------------
+*/
+section#searchCourse {
+    padding: 20vh 0;
+    margin-bottom: 15vh;
+}
+
+
+    section#searchCourse .sectionSubheading {
+        margin-left: auto;
+        margin-right: auto;
+        font-family: 'Poppins Bold';
+    }
+
+div#home_searchForm {
+    background: rgb(255,255,255,0.25);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1vw;
+    padding: 1%;
+}
+
+    div#home_searchForm .txtHomeSearchBox,
+    div#home_searchForm .btnHomeSearch {
+        border-radius: 0.5vw;
+        font-size: 1.5vw;
+        height: 4vw;
+    }
+
+    div#home_searchForm .txtHomeSearchBox {
+        width: 55vw;
+        padding: 1%;
+        background-color: transparent;
+        border: none;
+        color: #fff;
+    }
+
+    div#home_searchForm .btnHomeSearch {
+        background-color: rgb(255,255,255);
+        border: none;
+        border-radius: 1vw;
+        padding: 0 1vw;
+        cursor: pointer;
+        color: #000;
+        transition: all 0.2s ease;
+    }
+
+section#searchCourse div.searchSuggest p {
+    font-size: 1.5vw;
+    font-weight: bold;
+    line-height: 10vh;
+    text-align: center;
+}
+
+section#searchCourse div.searchSuggestWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+    section#searchCourse div.searchSuggestWrapper div.searchSuggestBtn {
+        padding: 1%;
+        font-size: 1vw;
+        border-radius: 0.5vw;
+        border: 0.05vw solid #fff;
+        background-color: none;
+        color: #fff;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+    }
+
+        section#searchCourse div.searchSuggestWrapper div.searchSuggestBtn:hover {
+            color: #000;
+            background-color: #fff;
+        }
+
+/*
+    ------------------------------
+    SECTION 4 : WHY CHOOSE ALGOLAB
+    ------------------------------
+*/
+section#strength {
+    background-color: #fff;
+    border-radius: 1vw;
+    padding: 0 2vw;
+    overflow: hidden;
+}
+
+    section#strength .sectionHeading {
+        color: #000;
+    }
+
+        section#strength .sectionHeading::before {
+            background: #000;
+        }
+
+    section#strength div.strength_wrapper {
+        padding: 5vh 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+div.strengthCard {
+    background: rgb(0,0,0,0.8);
+    padding: 2%;
+    border-radius: 1vw;
+    width: 25vw;
+}
+
+    div.strengthCard div.strengthIconWrapper {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 8vw;
+        height: 17vh;
+        padding: 8%;
+    }
+
+div.strengthIconWrapper div.spinner {
+    width: 100%;
+    height: 100%;
+    border: 0.2vw solid rgb(0,0,0,0);
+    border-radius: 50%;
+    border-top: 0.2vw solid rgb(255,255,255);
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+div .strengthCard div.strengthIconWrapper img {
+    width: 100%;
+    height: 100%;
+}
+
+div.strengthCard h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: bold;
+    line-height: 10vh;
+    font-family: 'Poppins Bold';
+}
+
+div.strengthCard p {
+    text-align: left;
+    font-size: 0.9vw;
+    line-height: 2.5vh;
+}
+
+/*
+    -----------------------
+    SECTION 5 : PARTNERSHIP
+    -----------------------
+*/
+
+section#partner {
+    padding: 10vh 0;
+}
+
+    section#partner div.partnerWrapper {
+        background-color: rgb(255,255,255,0.3);
+        border-radius: 2vw;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    section#partner div.partnerCardGroup {
+        width: fit-content;
+        gap: 4vw;
+        display: flex;
+        flex-flow: row nowrap;
+        padding: 0 4.5vw;
+        justify-content: space-between;
+        transition: transform 1s ease;
+    }
+
+    section#partner div.partnerCard {
+        align-content: center;
+        text-align: center;
+        width: 15vw;
+        padding: 1%;
+        background-color: #fff;
+        border-radius: 2vw;
+    }
+
+        section#partner div.partnerCard img {
+            width: 100%;
+        }
+
+div.partnerSlider {
+    position: absolute;
+    z-index: 2;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+    div.partnerSlider div {
+        border-radius: 2vw;
+        background-color: rgb(0,0,0,0.5);
+        color: #fff;
+        font-size: 2vw;
+        backdrop-filter: blur(0.5vw);
+        height: 100%;
+        width: 5%;
+        text-align: center;
+        align-content: center;
+        cursor: pointer;
+    }
+
+/*
+    ------------------------
+    SECTION 6 : TESTIMONIALS
+    ------------------------
+*/
+section#testimonial {
+    margin: 10vh 0;
+    padding: 0 2vw;
+    overflow: hidden;
+}
+
+    section#testimonial .sectionBody {
+        padding: 2vh 0;
+    }
+
+    section#testimonial div.testimonialWrapper {
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        justify-content: space-between;
+        padding: 2%;
+        border-radius: 1vw;
+    }
+
+div.testimonialCard {
+    width: 25vw;
+    height: 30vh;
+    background: linear-gradient(rgb(255,255,255,0.5), rgb(255,255,255,0.2), rgb(255,255,255,0.5));
+    box-shadow: inset 0 0 1.5vw 0.1vw rgb(255,255,255,0.8);
+    border-radius: 1vw;
+    position: relative;
+}
+
+div.testimonialBio {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: end;
+    bottom: -12vh;
+    left: -2.5vw;
+}
+
+div.testimonialProfile {
+    padding-left: 1vw;
+}
+
+div.testimonialBio div.testimonialImg {
+    width: 30%;
+    height: 100%;
+    border-radius: 100%;
+    border: 0.8vw solid #000;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center right !important;
+}
+
+div.testimonialCard:nth-of-type(1) .testimonialImg {
+    background: url("../Images/home/home_testimonialBio1.jpg");
+}
+
+div.testimonialCard:nth-of-type(2) .testimonialImg {
+    background: url("../Images/home/home_testimonialBio2.jpg");
+}
+
+div.testimonialCard:nth-of-type(3) .testimonialImg {
+    background: url("../Images/home/home_testimonialBio3.jpg");
+}
+
+div.testimonialProfile h3 {
+    font-family: Quicksand, 'Poppins Bold', Arial, Helvetica, sans-serif;
+    font-size: 1.2vw;
+    font-variant: small-caps;
+    color: #fff;
+    font-weight: bold;
+    line-height: 5vh;
+}
+
+div.testimonialProfile h4 {
+    font-family: Quicksand, 'Poppins Bold', Arial, Helvetica, sans-serif;
+    font-size: 1vw;
+    font-style: italic;
+    color: rgb(255,255,255,0.6);
+    margin-bottom: 2vh;
+}
+
+
+div.testimonialWrapper div.testimonialComment {
+    padding: 5vh 2vw;
+    height: 100%;
+    align-content: center;
+}
+
+div.testimonialComment p {
+    font-family: HelvLight;
+    font-size: 1vw;
+    color: #fff;
+    height: 100%;
+    text-align: justify;
+    line-height: 3vh;
+    font-style: italic;
+}
+
+    div.testimonialComment p::before {
+        content: '\201C';
+        display: block;
+        font-weight: bold;
+        font-size: 3vw;
+    }
+
+/*
+    -------------------
+    SECTION 7 : SIGN UP
+    -------------------
+*/
+section.SignupBecomeTut {
+    background-color: #fff;
+    border-radius: 1vw;
+    padding: 25vh 2vw;
+    margin-bottom: 20vh;
+    overflow: hidden;
+}
+
+    section.SignupBecomeTut .sectionSubheading {
+        color: #000;
+        font-family: 'Poppins Bold';
+        font-weight: bold;
+    }
+
+
+    section.SignupBecomeTut div.btnToPage {
+        margin-left: auto;
+        margin-right: auto;
+        color: #000;
+        font-weight: bold;
+        border-width: 0.2vw;
+        border-color: #000;
+    }
+
+        section.SignupBecomeTut div.btnToPage::before {
+            background-color: #000;
+            border-radius: 0;
+        }
+
+        section.SignupBecomeTut div.btnToPage:hover p {
+            color: #fff;
+        }

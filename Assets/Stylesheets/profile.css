@@ -1,0 +1,232 @@
+﻿body {
+}
+
+h1 {
+    font-size: 4vh;
+}
+
+/*ProfileDetail*/
+#ProfileParent {
+    height: 30vh;
+    width: 200vh;
+}
+
+#ProfilePHead {
+    font-size: 12vh;
+    text-align: center;
+    padding-top: 6vh;
+}
+
+/*Profile picture*/
+
+#PPParent {
+    width: 55vh;
+    height: 180vh;
+    margin-left: 10vh;
+}
+
+
+#imageParent {
+    height: 40vh;
+    width: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+
+.AvatarClass {
+    width: 25vh;
+    height: 25vh;
+    object-fit: cover;
+    border-radius: 30vh;
+}
+
+#updateAvatar {
+    display: block;
+}
+
+#updateProfilePicture {
+    padding-left: 18vh;
+    padding-bottom: 10vh;
+}
+
+.AvatarParent {
+    background-color: white;
+}
+
+#ProfileInfo {
+    position: absolute;
+    top: 40vh;
+    left: 100vh;
+    height: 100vh;
+}
+
+
+/*profileInformation*/
+
+#ProfileInfo {
+    margin-left: -10vh;
+    width: 100vh;
+    background-color: white;
+    height: 150vh;
+    color: black;
+    border-radius: 1vh;
+}
+
+.ElementHeader {
+    display: flex;
+    height: 8vh;
+    background-color: rgba(33, 40, 50, 1);
+    align-items: center;
+    padding-left: 3vh;
+    color: white;
+    border-radius: 0.5vh;
+}
+
+.blockElement {
+    margin-top: 2vh;
+}
+
+.ElementField {
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 0.7vh;
+    width: 90vh;
+    margin: 2vh;
+    height: 4vh;
+    color: black;
+    padding-left: 1vh;
+    padding-top: 1vh;
+}
+
+.ElementTopic {
+    margin-left: 1vh;
+}
+
+/*EnrollmentDesign*/
+
+.EnrollmentParent {
+    width: 20vh;
+    height: 10vh;
+    display: flex;
+    margin-left: 5vh;
+    font-size: 2vh;
+}
+
+
+#BottomDesign {
+    display: flex;
+    width: 50vh;
+    height: 10vh;
+    text-align: center;
+    align-content: center;
+    font-size: 3vh;
+}
+
+#Div1 {
+    display: flex;
+    margin-top: 1vh;
+    background-color: black;
+    border: 1px solid grey;
+    align-content: center;
+    width: 40vh;
+    border-radius: 1vh;
+}
+
+#ViewReport {
+    margin-top: 4vh;
+    margin-left: 4vh;
+    display: inline-block;
+    width: 35vh;
+    height: 10vh;
+    color: white;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    border-radius: 1vh;
+    line-height: 10vh;
+}
+
+#TutorReport {
+    margin-top: 4vh
+}
+
+
+    #TutorReport:hover {
+        color: black;
+        background-color: white;
+    }
+
+#ViewReport:hover {
+    color: black;
+    background-color: white;
+}
+
+
+.UpdateDesign {
+    left: 55vh;
+    position: absolute;
+    top: 135vh;
+    width: 35vh;
+    height: 10vh;
+    background-color: black;
+    color: white;
+    border-radius: 1vh;
+    font-size: 2.5vh;
+}
+
+    .UpdateDesign:hover {
+        color: black;
+        background-color: white;
+    }
+
+.AvatarUpdated {
+    height: 9vh;
+    background-color: black;
+    color: white;
+    border-radius: 1vh;
+    font-size: 2vh;
+}
+
+    .AvatarUpdated:hover {
+        color: black;
+        background-color: white;
+    }
+
+
+/*popUp*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Can adjust based on preference */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }

@@ -1,0 +1,46 @@
+﻿.Selector_page {
+    padding: 5vh 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+    margin: 0 auto;
+}
+
+.Selector_Window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30vw;
+    height: 40vh;
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255, .2);
+}
+
+.Welcome {
+    color: White;
+    font-size: 2vw;
+}
+
+.BtnSelect {
+    font-size: 1vw;
+    letter-spacing: 0.2vw;
+    font-weight: 500;
+    border: 2px solid #ffffff;
+    height: 45px;
+    width: 60vh;
+    border: 2px solid black;
+    border-radius: 1vw;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
+    margin: 1vw;
+    transition: .3s ease-in-out;
+}
+
+    .BtnSelect:hover {
+        background-color: black;
+        color: #ffffff;
+        border: 2px solid white;
+    }

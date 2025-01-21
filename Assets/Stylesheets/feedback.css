@@ -1,0 +1,150 @@
+﻿/* Wrapper to Center the Tooltip */
+section.errorTooltipWrapper {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 10vh; /* Adjusted to use viewport height */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999999999 !important;
+}
+
+/* Tooltip Styling */
+div.errorTooltip {
+    padding: 1vw; /* Adjusted padding to use viewport width */
+    border-radius: 0.5vw; /* Border radius in vw */
+    background: rgb(100, 0, 0);
+    display: flex;
+    gap: 1vw; /* Gap in vw */
+    align-items: center;
+    justify-content: space-evenly;
+    opacity: 0; /* Start hidden */
+    transform: translateY(5vh); /* Tooltip starts slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease, height 0.5s ease, margin 0.5s ease; /* Smooth transition */
+    position: relative;
+    width: fit-content;
+    margin: 2vh auto; /* Margin in vh for vertical spacing */
+    height: auto; /* Allow for height to change */
+}
+
+
+    /* Tooltip Image Styling */
+    div.errorTooltip div.errorTooltipImg {
+        width: 1.2vw;
+        height: 1.2vw;
+        background-image: url('../Images/icons/icon_error.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    /* Tooltip Message Styling */
+    div.errorTooltip p.errorTooltipMsg {
+        font-size: 1vw;
+        color: white;
+    }
+
+
+section #feedbackForm {
+    padding: 5vh 0;
+}
+
+    section#feedbackForm h3 {
+        text-align: center;
+        font-size: 3vw;
+        font-family: "Poppins Bold";
+        letter-spacing: 0.15vw;
+    }
+
+div.feedbackForm_wrapper {
+    width: 100%;
+    height: fit-content;
+    padding: 5vh 0;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10vh;
+}
+
+div.feedbackForm_card {
+    padding: 5vh 1vw;
+    width: 30vw;
+    height: fit-content;
+    margin: 0 auto;
+    border-radius: 1vw;
+    background: rgb(255,255,255,0.15);
+}
+
+    div.feedbackForm_card h4 {
+        text-align: justify;
+        font-size: 1vw;
+        line-height: 3vh;
+    }
+
+    div.feedbackForm_card table {
+        margin-top: 8vh;
+        margin-bottom: 5vh;
+        margin-left: auto;
+        margin-right: auto;
+        height: fit-content;
+    }
+
+.feedbackRating input[type="radio"] {
+    display: none;
+}
+
+.feedbackRating tbody {
+    display: flex;
+    gap: 0.5vw;
+}
+
+.feedbackRating label {
+    font-size: 1.2vw;
+    font-weight: bold;
+    background-color: rgb(255,255,255,0.2);
+    padding: 1vw 1.5vw;
+    border-radius: 100vw;
+    color: #fff;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+    .feedbackRating label:hover {
+        color: #000;
+        background-color: rgb(255,255,255);
+    }
+
+input[type="radio"]:checked + label {
+    background-color: rgb(255,255,255,0.8);
+    color: #000;
+}
+
+.feedbackDetails {
+    border: none;
+    margin: 2vh 0;
+    border-radius: 0.5vw;
+    padding: 1vw;
+    width: 100%;
+    resize: none;
+    background: rgb(255,255,255,0.2);
+    color: #fff;
+    font-size: 1vw;
+    font-family: Quicksand, HelvLight, Poppins;
+}
+
+.submitFeedbackBtn {
+    padding: 1.5vh 1vw;
+    width: 10vw;
+    margin: 0 auto;
+    border: 0.2vw solid #fff;
+    background: none;
+    color: #fff;
+    font-size: 1.5vw;
+    border-radius: 1vw;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+    .submitFeedbackBtn:hover {
+        background: #fff;
+        color: #000;
+    }

@@ -1,0 +1,578 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6F9EA2E6-F121-4BF1-9278-B6A0893FB7E7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AlgoLab</RootNamespace>
+    <AssemblyName>AlgoLab</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44327</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="AccountSelect.aspx" />
+    <Content Include="Assets\Fonts\Orbitron\OFL.txt" />
+    <Content Include="Assets\Fonts\Orbitron\README.txt" />
+    <Content Include="Assets\Fonts\Poppins\OFL.txt" />
+    <Content Include="Assets\Fonts\Quicksand\OFL.txt" />
+    <Content Include="Assets\Fonts\Quicksand\README.txt" />
+    <Content Include="Assets\Images\AdminInterface\Computer-Science-Backgrounds-HD.jpg" />
+    <Content Include="Assets\Images\BecomeTutor\commission.png" />
+    <Content Include="Assets\Images\BecomeTutor\environment.png" />
+    <Content Include="Assets\Images\BecomeTutor\group.png" />
+    <Content Include="Assets\Images\BecomeTutor\no-experience.png" />
+    <Content Include="Assets\Images\BecomeTutor\support.png" />
+    <Content Include="Assets\Images\course\defaultthumbnail.png" />
+    <Content Include="Assets\Images\home\home_testimonialBio3.jpg" />
+    <Content Include="Assets\Images\icons\icon_error404.png" />
+    <Content Include="Assets\Images\icons\icon_errorApp.png" />
+    <Content Include="Assets\Images\icons\icon_logout.png" />
+    <Content Include="Assets\Images\icons\icon_send.png" />
+    <Content Include="Assets\Images\IncomePage\commission.png" />
+    <Content Include="Assets\Images\IncomePage\course.png" />
+    <Content Include="Assets\Images\IncomePage\student.png" />
+    <Content Include="Assets\Scripts\SystemFeedbackReport.js" />
+    <Content Include="Assets\Stylesheets\cmanagement.css" />
+    <Content Include="Assets\Stylesheets\error.css" />
+    <Content Include="Assets\Stylesheets\AdminIncomeReport.css" />
+    <Content Include="Assets\Stylesheets\systemFeedbackReport.css" />
+    <Content Include="ErrorPages\Error404.aspx" />
+    <Content Include="ErrorPages\ErrorApp.aspx" />
+    <Content Include="Management\AdminInterface.aspx" />
+    <Content Include="Management\ApproveTutor.aspx" />
+    <Content Include="Management\SystemFeedbackReport.aspx" />
+    <Content Include="Management\AdminIncomeReport.aspx" />
+    <Content Include="User\BecomeTutor.aspx" />
+    <Content Include="User\CourseManagement.aspx" />
+    <Content Include="User\Feedback.aspx" />
+    <Content Include="ForgetPassword.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Assets\Images\about\about1.jpg" />
+    <Content Include="Assets\Images\about\about2.jpg" />
+    <Content Include="Assets\Images\about\about3.jpg" />
+    <Content Include="Assets\Images\about\about4.jpg" />
+    <Content Include="Assets\Images\account\image1.jpg" />
+    <Content Include="Assets\Images\account\image2.jpg" />
+    <Content Include="Assets\Images\account\image3.jpg" />
+    <Content Include="Assets\Images\course\courseImg\CS-0131-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\CS-0392-EN\icon.png" />
+    <Content Include="Assets\Images\course\courseImg\CS-0392-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\CS-0393-EN\icon.png" />
+    <Content Include="Assets\Images\course\courseImg\CS-0393-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\CS-1031-EN\icon.png" />
+    <Content Include="Assets\Images\course\courseImg\CS-1031-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\CS-1141-EN\icon.png" />
+    <Content Include="Assets\Images\course\courseImg\CS-1141-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\CS-1142-EN\icon.png" />
+    <Content Include="Assets\Images\course\courseImg\CS-1142-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\CS-1391-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\CS-1401-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\CS-1871-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\CS-1993-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\CS-2392-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\CS-2402-EN\icon.png" />
+    <Content Include="Assets\Images\course\courseImg\CS-2402-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\CS-2782-EN\icon.png" />
+    <Content Include="Assets\Images\course\courseImg\CS-2782-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\CS-3081-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\CS-3773-EN\icon.png" />
+    <Content Include="Assets\Images\course\courseImg\CS-3773-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\default_courseIcon.png" />
+    <Content Include="Assets\Images\course\courseImg\default_courseImg.png" />
+    <Content Include="Assets\Images\course\courseImg\IT-0272-EN\icon.png" />
+    <Content Include="Assets\Images\course\courseImg\IT-0272-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\IT-0571-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\IT-0932-EN\icon.png" />
+    <Content Include="Assets\Images\course\courseImg\IT-0932-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\IT-1301-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\IT-1501-EN\icon.png" />
+    <Content Include="Assets\Images\course\courseImg\IT-1501-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\IT-1591-EN\icon.png" />
+    <Content Include="Assets\Images\course\courseImg\IT-1591-EN\image.jpg" />
+    <Content Include="Assets\Images\course\courseImg\IT-2551-EN\image.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240520145032-0001\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240521145032-0002\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240522145032-0003\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240523145032-0004\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240524145032-0005\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240525145032-0006\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240526145032-0007\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240527145032-0008\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240528145032-0009\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240529145032-0010\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240530145032-0011\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240601145032-0012\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240602145032-0013\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240603145032-0014\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240604145032-0015\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240605145032-0016\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240606145032-0017\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240607145032-0018\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240608145032-0019\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240609145032-0020\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240610145032-0021\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240611145032-0022\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240612145032-0023\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240613145032-0024\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240614145032-0025\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240615145032-0026\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240616145032-0027\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240617145032-0028\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240618145032-0029\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240619145032-0030\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240620145032-0031\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240621145032-0032\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240622145032-0033\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240623145032-0034\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240624145032-0035\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240625145032-0036\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240626145032-0037\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240627145032-0038\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240628145032-0039\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240629145032-0040\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240701145032-0041\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240702145032-0042\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240703145032-0043\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240704145032-0044\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240705145032-0045\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240706245032-0046\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240707245032-0047\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240708245032-0048\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240709245032-0049\profile.jpg" />
+    <Content Include="Assets\Images\customer\CUST-20240710245032-0050\profile.jpg" />
+    <Content Include="Assets\Images\icons\icon_error.png" />
+    <Content Include="Assets\Images\icons\icon_feedback.png" />
+    <Content Include="Assets\Images\icons\icon_noResult.png" />
+    <Content Include="Assets\Images\icons\icon_success.png" />
+    <Content Include="Assets\Images\icons\icon_support.png" />
+    <Content Include="Assets\Images\profile\profileimg.jpg" />
+    <Content Include="Assets\Images\ReportCourse1\cert.png" />
+    <Content Include="Assets\Images\ReportCourse1\picture1.jpg" />
+    <Content Include="Assets\Images\ReportCourse1\studentIcon.png" />
+    <Content Include="Assets\Images\SignUp\female.png" />
+    <Content Include="Assets\Images\SignUp\male.png" />
+    <Content Include="User\Lesson.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="App_Data\AlgoLab.mdf" />
+    <Content Include="App_Data\AlgoLab_log.ldf">
+      <DependentUpon>AlgoLab.mdf</DependentUpon>
+    </Content>
+    <Content Include="Course.aspx" />
+    <Content Include="CourseDetails.aspx" />
+    <Content Include="Assets\Images\course\course_hero.jpg" />
+    <Content Include="Assets\Images\Favicon.png" />
+    <Content Include="Assets\Images\home\home_hero.jpg" />
+    <Content Include="Assets\Images\home\home_partner_adobe.png" />
+    <Content Include="Assets\Images\home\home_partner_aws.png" />
+    <Content Include="Assets\Images\home\home_partner_cisco.png" />
+    <Content Include="Assets\Images\home\home_partner_coursera.png" />
+    <Content Include="Assets\Images\home\home_partner_figma.png" />
+    <Content Include="Assets\Images\home\home_partner_framer.png" />
+    <Content Include="Assets\Images\home\home_partner_github.png" />
+    <Content Include="Assets\Images\home\home_partner_google.png" />
+    <Content Include="Assets\Images\home\home_partner_ibm.png" />
+    <Content Include="Assets\Images\home\home_partner_microsoft.png" />
+    <Content Include="Assets\Images\home\home_partner_nvidia.png" />
+    <Content Include="Assets\Images\home\home_partner_unity.png" />
+    <Content Include="Assets\Images\home\home_strength_careerSkills.png" />
+    <Content Include="Assets\Images\home\home_strength_expert.png" />
+    <Content Include="Assets\Images\home\home_strength_flexible.png" />
+    <Content Include="Assets\Images\home\home_testimonialBio1.jpg" />
+    <Content Include="Assets\Images\home\home_testimonialBio2.jpg" />
+    <Content Include="Assets\Images\home_hero.jpg" />
+    <Content Include="Assets\Images\Logo.png" />
+    <Content Include="User\Payment.aspx" />
+    <Content Include="User\Profile.aspx" />
+    <Content Include="Management\Report.aspx" />
+    <Content Include="Assets\Scripts\account.js" />
+    <Content Include="Assets\Scripts\algolab.js" />
+    <Content Include="Assets\Scripts\ApproveTutor.js" />
+    <Content Include="Assets\Scripts\ForgetPassword.js" />
+    <Content Include="Assets\Scripts\payment.js" />
+    <Content Include="SignUp.aspx" />
+    <Content Include="Assets\Stylesheets\aboutus.css" />
+    <Content Include="Assets\Stylesheets\account.css" />
+    <Content Include="Assets\Stylesheets\AccountSelect.css" />
+    <Content Include="Assets\Stylesheets\AdminInterface.css" />
+    <Content Include="Assets\Stylesheets\algolab.css" />
+    <Content Include="Assets\Stylesheets\ApproveTutor.css" />
+    <Content Include="Assets\Stylesheets\BecomeTutor.css" />
+    <Content Include="Assets\Stylesheets\course.css" />
+    <Content Include="Assets\Stylesheets\courseDetails.css" />
+    <Content Include="Assets\Stylesheets\feedback.css" />
+    <Content Include="Assets\Stylesheets\ForgetPassword.css" />
+    <Content Include="Assets\Stylesheets\home.css" />
+    <Content Include="Assets\Stylesheets\lessons.css" />
+    <Content Include="Assets\Stylesheets\payment.css" />
+    <Content Include="Assets\Stylesheets\printReceipt.css" />
+    <Content Include="Assets\Stylesheets\profile.css" />
+    <Content Include="Assets\Stylesheets\Report.css" />
+    <Content Include="Assets\Stylesheets\reportCourse1.css" />
+    <Content Include="Assets\Stylesheets\reset.css" />
+    <Content Include="Home.aspx" />
+    <Content Include="Assets\Stylesheets\SignUp.css" />
+    <Content Include="Assets\Stylesheets\support.css" />
+    <Content Include="Support.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccountSelect.aspx.cs">
+      <DependentUpon>AccountSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountSelect.aspx.designer.cs">
+      <DependentUpon>AccountSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\Error404.aspx.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\Error404.aspx.designer.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\ErrorApp.aspx.cs">
+      <DependentUpon>ErrorApp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\ErrorApp.aspx.designer.cs">
+      <DependentUpon>ErrorApp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\AdminInterface.aspx.cs">
+      <DependentUpon>AdminInterface.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\AdminInterface.aspx.designer.cs">
+      <DependentUpon>AdminInterface.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\ApproveTutor.aspx.cs">
+      <DependentUpon>ApproveTutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\ApproveTutor.aspx.designer.cs">
+      <DependentUpon>ApproveTutor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\SystemFeedbackReport.aspx.cs">
+      <DependentUpon>SystemFeedbackReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\SystemFeedbackReport.aspx.designer.cs">
+      <DependentUpon>SystemFeedbackReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\AdminIncomeReport.aspx.cs">
+      <DependentUpon>AdminIncomeReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\AdminIncomeReport.aspx.designer.cs">
+      <DependentUpon>AdminIncomeReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\BecomeTutor.aspx.cs">
+      <DependentUpon>BecomeTutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\BecomeTutor.aspx.designer.cs">
+      <DependentUpon>BecomeTutor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\CourseManagement.aspx.cs">
+      <DependentUpon>CourseManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\CourseManagement.aspx.designer.cs">
+      <DependentUpon>CourseManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgetPassword.aspx.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgetPassword.aspx.designer.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="User\Lesson.aspx.cs">
+      <DependentUpon>Lesson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Lesson.aspx.designer.cs">
+      <DependentUpon>Lesson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Course.aspx.cs">
+      <DependentUpon>Course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Course.aspx.designer.cs">
+      <DependentUpon>Course.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseDetails.aspx.cs">
+      <DependentUpon>CourseDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseDetails.aspx.designer.cs">
+      <DependentUpon>CourseDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AlgoLab.Master.cs">
+      <DependentUpon>AlgoLab.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlgoLab.Master.designer.cs">
+      <DependentUpon>AlgoLab.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Support.aspx.cs">
+      <DependentUpon>Support.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Support.aspx.designer.cs">
+      <DependentUpon>Support.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Fonts\helvlight\HELN.TTF" />
+    <Content Include="Assets\Fonts\Orbitron\Orbitron-VariableFont_wght.ttf" />
+    <Content Include="Assets\Fonts\Orbitron\static\Orbitron-Black.ttf" />
+    <Content Include="Assets\Fonts\Orbitron\static\Orbitron-Bold.ttf" />
+    <Content Include="Assets\Fonts\Orbitron\static\Orbitron-ExtraBold.ttf" />
+    <Content Include="Assets\Fonts\Orbitron\static\Orbitron-Medium.ttf" />
+    <Content Include="Assets\Fonts\Orbitron\static\Orbitron-Regular.ttf" />
+    <Content Include="Assets\Fonts\Orbitron\static\Orbitron-SemiBold.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-Black.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-Bold.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-Italic.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-Light.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-Medium.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-Regular.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-Thin.ttf" />
+    <Content Include="Assets\Fonts\Poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Assets\Fonts\Quicksand\Quicksand-VariableFont_wght.ttf" />
+    <Content Include="Assets\Fonts\Quicksand\static\Quicksand-Bold.ttf" />
+    <Content Include="Assets\Fonts\Quicksand\static\Quicksand-Light.ttf" />
+    <Content Include="Assets\Fonts\Quicksand\static\Quicksand-Medium.ttf" />
+    <Content Include="Assets\Fonts\Quicksand\static\Quicksand-Regular.ttf" />
+    <Content Include="Assets\Fonts\Quicksand\static\Quicksand-SemiBold.ttf" />
+    <Content Include="Assets\Images\course\courseMaterial\CS-0131-EN\LID-00-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\CS-0392-EN\LID-01-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\CS-0393-EN\LID-02-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\CS-1031-EN\LID-03-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\CS-1141-EN\LID-04-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\CS-1142-EN\LID-05-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\CS-1391-EN\LID-06-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\CS-1401-EN\LID-07-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\CS-1871-EN\LID-08-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\CS-1993-EN\LID-09-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\CS-2392-EN\LID-10-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\CS-2402-EN\LID-11-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\CS-2782-EN\LID-12-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\CS-3081-EN\LID-13-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\CS-3773-EN\LID-14-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\IT-0272-EN\LID-15-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\IT-0571-EN\LID-16-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\IT-0932-EN\LID-17-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\IT-1301-EN\LID-18-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\IT-1501-EN\LID-19-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\IT-1591-EN\LID-20-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\course\courseMaterial\IT-2551-EN\LID-21-01\LessonMaterial.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240521155032-0001\2d9c410b-6a7e-4f4e-83c3-d4d624a16d40.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240523155032-0002\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240525145032-0006\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240527145032-0008\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240529145032-0010\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240601145032-0012\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240602145032-0013\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240604145032-0015\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240606145032-0017\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240607145032-0018\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240609145032-0020\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240611145032-0022\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240613145032-0024\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240615145032-0026\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240617145032-0028\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240619145032-0030\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240621145032-0032\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240622145032-0033\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240624145032-0035\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240625145032-0036\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240626145032-0037\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240628145032-0039\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240629145032-0040\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240702145032-0042\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240703145032-0043\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240704145032-0044\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240706245032-0046\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240708245032-0048\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20240710245032-0050\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <Content Include="Assets\Images\BecomeTutor\TID-20250102135159-0001\6c496129-8be0-4674-a024-1681a7a4e646.pdf" />
+    <None Include="packages.config" />
+    <Content Include="AlgoLab.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63139</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44327/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

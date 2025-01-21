@@ -1,0 +1,292 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AlgoLab.Master.cs" Inherits="AlgoLab.AlgoLabMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder_Title" runat="server"></asp:ContentPlaceHolder>
+    </title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="<%= ResolveUrl("~/Assets/Images/Favicon.png") %>" rel="icon" type="image/x-icon" />
+    <link href="<%= ResolveUrl("~/Assets/Stylesheets/reset.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<%= ResolveUrl("~/Assets/Stylesheets/algolab.css")%>" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder_CustomHead" runat="server"></asp:ContentPlaceHolder>
+
+    <script src="<%= ResolveUrl("~/Assets/Scripts/algolab.js")%>" type="text/javascript" async></script>
+</head>
+<body>
+    <form id="form_algolab" runat="server">
+
+        <div id="searchContainer">
+
+            <div class="navSearchCloseBtn" onclick="navSearchClose()">&#10006;</div>
+
+            <asp:Label ID="lblNavSearchTitle" runat="server" Text="Find a Course, Start Learning."></asp:Label>
+            <div id="navSearchForm">
+                <asp:TextBox ID="txtNavSearch" runat="server" placeholder="What would you like to master?"></asp:TextBox>
+
+                <asp:Button ID="btnNavSearch" runat="server" CssClass="btnNavSearch" Text="Search" OnClick="btnNavSearch_Click" />
+            </div>
+            <div class="searchResultContainer"></div>
+        </div>
+
+        <header>
+            <nav>
+                <div id="nav_left">
+                    <ul>
+                        <li id="nav_logo">
+                            <a href="<%= ResolveUrl("~/Home.aspx") %>">
+                                <img src="<%= ResolveUrl("~/Assets/Images/Logo.png") %>" alt="AlgoLab Logo" /></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="nav_center">
+                    <ul>
+                        <li id="nav_course">
+                            <a href="<%= ResolveUrl("~/Course.aspx") %>">Courses&nbsp;
+                            <i class="fa fa-caret-down"></i>
+                            </a>
+                            <div class="dropdownMenu" id="nav_courses">
+                                <div class="dropdown-left">
+                                    <ul>
+                                        <li class="dropdown-leftItm" id="course_popular" onmouseover="setActiveNavCourse(this)">Popular</li>
+                                        <li class="dropdown-leftItm" id="course_free" onmouseover="setActiveNavCourse(this)">Free</li>
+                                        <li class="dropdown-leftItm" id="course_new" onmouseover="setActiveNavCourse(this)">New</li>
+                                    </ul>
+                                </div>
+
+                                <div class="dropdown-right">
+                                    <div class="dropdown-rightTitle">
+                                        <asp:Label ID="lblDropdownBrief" runat="server" Text="Select a Course"></asp:Label>
+                                    </div>
+
+                                    <div class="dropdown-rightContent">
+                                        <!--NAV : POPULAR COURSES-->
+                                        <div class="nav_course-wrapper nav_course_popular" id="NavPopularCourse" runat="server">
+                                        </div>
+
+                                        <!--NAV : FREE COURSES-->
+                                        <div class="nav_course-wrapper nav_course_free" id="NavFreeCourse" runat="server">
+                                        </div>
+
+                                        <!--NAV : NEW COURSES-->
+                                        <div class="nav_course-wrapper nav_course_new" id="NavNewCourse" runat="server">
+                                        </div>
+
+                                    </div>
+
+                                    <!--NAV : EXPLORE MORE [BUTTON]-->
+                                    <div class="nav_course_more">
+                                        <a href="<%= ResolveUrl("~/Course.aspx") %>">
+                                            <div class="btnToPage">
+                                                <p>Explore More</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li id="nav_about">
+                            <a href="<%= ResolveUrl("~/About.aspx") %>">About</a>
+                        </li>
+
+                        <li id="nav_support">
+                            <a href="<%= ResolveUrl("~/Support.aspx") %>">Support</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="nav_right">
+                    <div id="nav_search" onclick="navSearchOpen()">
+                        <ul>
+                            <li><i class="fa fa-search"></i></li>
+                        </ul>
+                    </div>
+
+                    <div id="nav_account">
+                        <ul>
+                            <!--Anonymous User : Login & SignUp-->
+                            <!--Student: BecomeTutor & Profile-->
+                            <!--Tutor: Profile-->
+                            <!--Admin: Profile-->
+
+                            <li id="NavLogin" class="nav_login" runat="server">
+                                <asp:HyperLink ID="lnkAccountSelect" runat="server" NavigateUrl="~/AccountSelect.aspx">Login</asp:HyperLink>
+                            </li>
+                            <li id="NavSignup" class="nav_signUp" runat="server">
+                                <asp:HyperLink ID="lnkSignup" runat="server" NavigateUrl="~/SignUp.aspx">Try Now!</asp:HyperLink>
+                            </li>
+
+                            <!--After Login (for student)-->
+                            <li id="NavBecomeTutor" class="nav_becomeTutor" runat="server">
+                                <asp:HyperLink ID="lnkBecomeTutor" runat="server" NavigateUrl="~/User/BecomeTutor.aspx">Become Tutor</asp:HyperLink>
+                            </li>
+
+                            <!--After Login (Admin ONLY)-->
+                            <li id="NavAdmin" class="nav_admin" runat="server">
+                                <asp:HyperLink ID="lnkAdmin" runat="server" NavigateUrl="~/Management/AdminInterface.aspx">Admin Dashboard</asp:HyperLink>
+                            </li>
+
+                            <!--After Login (Student, Tutor)-->
+                            <li id="NavProfile" class="nav_profile" runat="server">
+                                <asp:ImageButton ID="imgBtnProfile" runat="server" OnClick="imgBtnProfile_Click" CssClass="imgBtnProfile" />
+                                <asp:Button ID="btnLogout" runat="server" Text="" CssClass="btnLogout" OnClick="btnLogout_Click1" />
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </nav>
+        </header>
+
+        <main>
+            <section id="spacer"></section>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder_Body" runat="server"></asp:ContentPlaceHolder>
+        </main>
+
+        <footer>
+            <div class="footer-top">
+                <div class="footer-left">
+                    <div class="footer-leftWrapper">
+                        <div class="footer-logo">
+                            <img src="<%= ResolveUrl("~/Assets/Images/Logo.png")%>" alt="AlgoLab Logo" />
+                        </div>
+                        <div class="footer-social">
+                            <ul>
+                                <li><a href="https://www.x.com"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.facebook.com"><i class="fa fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-right">
+                    <div class="footer-group">
+                        <h2 class="footer-groupTitle">Company</h2>
+                        <div class="footer-groupItmList">
+                            <ul>
+                                <li class="footer-groupItm"><a href="<%= ResolveUrl("~/About.aspx") %>">About</a></li>
+                                <li class="footer-groupItm"><a href="<%= ResolveUrl("~/Support.aspx") %>">Contact</a></li>
+                                <li class="footer-groupItm"><a href="<%= ResolveUrl("~/Support.aspx#faqs") %>">FAQs</a></li>
+                                <li class="footer-groupItm"><a href="<%= ResolveUrl("~/User/Feedback.aspx") %>">Feedback</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-group" id="LearnUs" runat="server">
+                        <h2 class="footer-groupTitle">Learn with Us</h2>
+                        <div class="footer-groupItmList">
+                            <ul>
+                                <li class="footer-groupItm" id="BecomeTutorLink" runat="server"><a href="<%= ResolveUrl("~/User/BecomeTutor.aspx")%>">Become a Tutor</a></li>
+                                <li class="footer-groupItm" id="LoginLink" runat="server"><a href="<%= ResolveUrl("~/AccountSelect.aspx")%>">Login</a></li>
+                                <li class="footer-groupItm" id="SignupLink" runat="server"><a href="<%= ResolveUrl("~/SignUp.aspx")%>">Sign Up</a></li>
+                                <li class="footer-groupItm"><a href="<%= ResolveUrl("~/Course.aspx#courseCatalog")%>">Catalog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer-group">
+                        <h2 class="footer-groupTitle">Legal</h2>
+                        <div class="footer-groupItmList">
+                            <ul>
+                                <li class="footer-groupItm"><a href="https://www.example.com">Terms of Service</a></li>
+                                <li class="footer-groupItm"><a href="https://www.example.com">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                &copy; 2024 AlgoLab | 
+            <a href="https://www.example.com">Privacy Policy</a> | 
+            <a href="https://www.example.com">Terms & Conditions</a>
+            </div>
+
+        </footer>
+
+        <script type="text/javascript">
+            // Set Simple Briefing on the Filter of Courses on hover
+            function displayNavCourseContent(courseFilter) {
+                // Initialize an empty string for the course brief
+                let courseBrief = "";
+
+                // Determine the course filter ID and set the corresponding brief
+                if (courseFilter.id === 'course_popular') {
+                    courseBrief = "What's trending in learning";
+                    document.querySelector('.nav_course_popular').style.display = 'flex';
+                } else if (courseFilter.id === 'course_free') {
+                    courseBrief = "Learn for free";
+                    document.querySelector('.nav_course_free').style.display = 'flex';
+                } else if (courseFilter.id === 'course_new') {
+                    courseBrief = "Explore new skills now";
+                    document.querySelector('.nav_course_new').style.display = 'flex';
+                } else {
+                    courseBrief = "Select a course";
+                }
+
+                // Update the label with the course brief
+                document.getElementById('<%= lblDropdownBrief.ClientID %>').innerText = courseBrief;
+            }
+
+            // Reset Course Briefing
+            function resetNavCourseContent() {
+                document.getElementById('<%= lblDropdownBrief.ClientID %>').innerText = "Select a course";
+                // Select all elements with the class 'courseFilterActive'
+                let activeFilters = document.querySelectorAll('.courseFilterActive');
+                let activeCourses = document.querySelectorAll('.nav_course-wrapper');
+
+                // Remove the 'courseFilterActive' class from all selected elements
+                activeFilters.forEach(filter => {
+                    filter.classList.remove('courseFilterActive');
+                });
+                // Remove the 'nav_course-wrapper' class from all selected elements
+                activeCourses.forEach(course => {
+                    course.style.display = 'flex';
+                });
+            }
+
+            // Set Active Course Filter
+            function setActiveNavCourse(activeCourseFilter) {
+                // Select all elements with the class 'courseFilterActive'
+                let activeFilters = document.querySelectorAll('.courseFilterActive');
+                let activeCourses = document.querySelectorAll('.nav_course-wrapper');
+
+                // Remove the 'courseFilterActive' class from all selected elements
+                activeFilters.forEach(filter => {
+                    filter.classList.remove('courseFilterActive');
+                });
+                // Remove the 'nav_course-wrapper' class from all selected elements
+                activeCourses.forEach(course => {
+                    course.style.display = 'none';
+                });
+
+                // Add the 'courseFilterActive' class to the clicked/active element
+                activeCourseFilter.classList.add('courseFilterActive');
+
+                // Set the course brief based on the active filter
+                displayNavCourseContent(activeCourseFilter);
+            }
+
+            function navSearchOpen() {
+                document.getElementById('searchContainer').style.display = 'block';
+                document.getElementById('txtNavSearch').focus();
+            }
+            function navSearchClose() {
+                document.getElementById('searchContainer').style.display = 'none';
+            }
+
+        </script>
+    </form>
+</body>
+</html>

@@ -1,0 +1,174 @@
+﻿
+#ApproveTutorPart {
+    justify-content: center;
+    align-items: center;
+}
+
+.Approve_part {
+    padding: 5vh 0;
+    display: block;
+    justify-content: center;
+    width: 80vw;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.title {
+    justify-content: center;
+    text-align: center;
+    font-size: 3vw;
+}
+
+.NoneRequest {
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.NoneRequestMessage {
+    text-align: center;
+}
+
+.box {
+    margin: 10px 0;
+}
+
+.Request_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.tutor-box {
+    background-color: black;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    flex-direction: column;
+    width: 50vw;
+    height: 25vh;
+    border-radius: 10px 0 0 0;
+    flex: 1;
+    max-width: 90%;
+    border: 2px solid rgba(255,255,255, .2);
+}
+
+.ViewBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tutor-box h3 {
+    margin: 0 0 10px;
+}
+
+.tutor-box p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.ViewBtn button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    width: 10vw;
+    height: 25vh;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 0 10px 0 0;
+    font-size: 14px;
+}
+
+    .ViewBtn button:hover {
+        background-color: #0056b3;
+    }
+
+/*.DetailWindow {
+    display: none;
+    background-color: black;
+    padding: 10px;
+    border: 2px solid rgba(255,255,255, .2);
+    border-radius: 0 0 10px 10px;
+}*/
+.DetailWindow {
+    overflow: hidden; /* Ensures content does not overflow during animation */
+    transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease; /* Smooth animation */
+    border: 2px solid rgba(255,255,255, .2);
+    max-height: 0; /* Fully collapsed */
+    opacity: 0; /* Fully transparent */
+    padding: 0 10px; /* Collapsed padding */
+    border-radius: 0 0 10px 10px;
+}
+
+    .DetailWindow.collapsed {
+        max-height: 0; /* Collapsed state */
+        opacity: 0; /* Invisible */
+        padding: 0; /* No padding */
+    }
+
+    .DetailWindow.expanded {
+        max-height: 300px; /* Adjust to fit content */
+        opacity: 1; /* Fully visible */
+        padding: 10px; /* Add padding */
+    }
+
+    .DetailWindow h3 {
+        margin: 0 0 10px;
+    }
+
+    .DetailWindow p {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+.Decide_btn button {
+    margin-top: 10px;
+    color: white;
+    border: none;
+    width: 50%;
+    height: 10vh;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button.Approve {
+    border-radius: 0 0 0 10px;
+    background-color: lawngreen;
+}
+
+    button.Approve:hover {
+        background-color: greenyellow;
+    }
+
+button.Reject {
+    border-radius: 0 0 10px 0;
+    background-color: red;
+}
+
+    button.Reject:hover {
+        background-color: orangered;
+    }
+
+.certification-link {
+    text-decoration: none;
+    color: #007bff; /* Bootstrap blue */
+    font-weight: bold;
+    font-size: 1.5vh;
+    border: 2px solid white;
+    border-radius: 0.5vw;
+    padding: 0.5vh 0.5vw;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+    .certification-link:hover {
+        text-decoration: underline;
+        color: #0056b3; /* Darker blue for hover */
+    }
+
+    .certification-link:active {
+        color: #003f7f; /* Even darker blue when clicked */
+    }

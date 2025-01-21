@@ -1,0 +1,419 @@
+﻿/*
+    ----------------
+    SECTION 1 : HERO
+    ----------------
+*/
+section#hero {
+    margin-bottom: 5vh;
+}
+
+    section#hero div.hero_backImg {
+        background: url("../Images/course/course_hero.jpg") no-repeat center center;
+    }
+
+    section#hero div.hero_container {
+        background-color: rgb(0,0,0,0.5);
+        font-family: Poppins;
+    }
+
+/*
+    --------------------------
+    SECTION 2 : COURSE CATALOG
+    --------------------------
+*/
+section#courseCatalog {
+    padding: 2vh 0;
+}
+
+    section#courseCatalog div.courseCatalog_title {
+        padding-top: 2vh;
+        padding-bottom: 5vh;
+    }
+
+div.courseCatalog_title h2 {
+    font-size: 2vw;
+    font-family: 'Poppins Bold';
+}
+
+section#courseCatalog div.course_wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+div.course_wrapper div.course_wrapper_left {
+    width: 25%;
+    height: fit-content;
+}
+
+div.course_wrapper div.course_wrapper_right {
+    width: 70%;
+    position: relative;
+}
+
+h2.course_category_title, h2.course_filter_title {
+    font-size: 2vw;
+    font-weight: lighter;
+    line-height: 5vh;
+    border-bottom: 0.2vh solid rgb(255,255,255,0.5);
+    margin-bottom: 3vh;
+    font-family: Poppins;
+}
+
+div.course_category_wrapper {
+    margin-bottom: 5vh;
+}
+
+/****************************************/
+/*Radio Button List for CATEGORY FILTER*/
+/****************************************/
+.cbl-category {
+    width: 100%;
+}
+
+    .cbl-category input[type="checkbox"] {
+        display: none;
+    }
+    /* Style the label to make it look clickable */
+    .cbl-category label {
+        margin-bottom: 1vh;
+        cursor: pointer;
+        display: block; /* Optional: to make the label take up full width */
+        padding: 5%;
+        border-radius: 0.5vw; /* Optional: rounded corners */
+        background-color: rgb(255,255,255,0.3); /* Light background color */
+        transition: all 0.3s ease; /* Smooth transition */
+        font-size: 1vw;
+        font-family: Poppins;
+    }
+
+        /* Change background color on hover for better UI */
+        .cbl-category label:hover {
+            background-color: rgb(255,255,255,0.5);
+        }
+
+/* Highlight the selected option */
+input[type="checkbox"]:checked + label {
+    background-color: rgb(255,255,255,0.8);
+    color: #000;
+}
+
+
+/****************/
+/*Course Filters*/
+/****************/
+div.filter_wrapper {
+    margin-bottom: 5vh;
+    margin-left: 1vw;
+}
+
+    div.filter_wrapper h3.filter_title {
+        margin-bottom: 2vh;
+        font-size: 1.2vw;
+    }
+
+.filter tbody {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1vh;
+}
+
+.filter td {
+    display: flex;
+    align-items: center;
+}
+
+/* Style the checkboxes */
+.filter input[type="checkbox"] {
+    appearance: none; /* Remove the default checkbox styling */
+    -webkit-appearance: none; /* For Safari */
+    border: 0.15vw solid rgb(200,200,200); /* White border for the checkbox */
+    border-radius: 0.2vw;
+    width: 1.3vw;
+    height: 1.3vw;
+    cursor: pointer; /* Pointer cursor for better UI feedback */
+    background-color: transparent;
+    accent-color: #fff; /* Change the checkbox tick color */
+    margin-left: 0;
+    margin-right: 1.5vw; /* Add space between the checkbox and text */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+    /* Style when checkbox is ticked */
+    .filter input[type="checkbox"]:checked {
+        color: #000; /* Black tick color */
+        background-color: rgb(200,200,200);
+        border-color: rgb(200,200,200);
+    }
+
+        /* Style for the tick (using a pseudo-element for custom tick) */
+        .filter input[type="checkbox"]:checked::after {
+            content: ' \2713'; /* Custom tick symbol */
+            display: block;
+            font-weight: bold;
+            font-size: 1vw;
+            line-height: 2.5vh;
+            text-align: center; /* Center the tick */
+        }
+
+/* Style the labels */
+.filter label {
+    font-family: Quicksand, Arial, HelvLight;
+    align-content: center;
+    font-size: 1.2vw;
+    color: #fff; /* Neutral text color */
+    cursor: pointer; /* Allow clicking on the label */
+    border-radius: 0.5vw;
+    padding: 0.5vw 1vw;
+    border: 0.2vw solid rgb(255,255,255,0.3);
+}
+
+
+/*******************/
+/*Course Search Bar*/
+/*******************/
+
+div#course_searchForm {
+    background: rgb(255,255,255,0.25);
+    width: 100%;
+    margin-left: auto;
+    border-radius: 1vw;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+    div#course_searchForm .txtCourseSearchBox,
+    div#course_searchForm .btnCourseSearch {
+        border-radius: 1vw;
+        font-size: 1.2vw;
+        height: 4vw;
+    }
+
+    div#course_searchForm .txtCourseSearchBox {
+        width: 100%;
+        padding: 2%;
+        background-color: transparent;
+        border: none;
+        color: #fff;
+    }
+
+    div#course_searchForm .btnCourseSearch {
+        background-color: rgb(255,255,255);
+        border: none;
+        border-radius: 1vw;
+        padding: 0 2vw;
+        cursor: pointer;
+        color: #000;
+        transition: all 0.2s ease;
+    }
+
+/****************/
+/*Course Content*/
+/****************/
+div.course_content_wrapper {
+    padding: 5vh 0;
+    width: 100%;
+    font-family: Poppins;
+}
+
+div.course_content_default_wrapper,
+div.course_content_custom_wrapper {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 3vw;
+}
+
+div.course_content_default_featured_wrapper,
+div.course_content_default_free_wrapper,
+div.course_content_default_new_wrapper {
+    width: 100%;
+    margin-bottom: 10vh;
+}
+
+div.course_content_featuredContent_wrapper,
+div.course_content_freeContent_wrapper,
+div.course_content_newContent_wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 3vw;
+}
+
+h2.course_default_sectionTitle {
+    font-size: 2vw;
+    font-weight: lighter;
+    margin-bottom: 5vh;
+    font-family: 'Poppins Bold';
+}
+
+div.course_card {
+    overflow: visible;
+    position: relative;
+    border-radius: 1vw;
+    width: 30%;
+    height: auto;
+    background: rgb(255,255,255,0.8);
+    transition: all 0.5s ease;
+}
+
+    div.course_card .course_link {
+        width: 100%;
+        height: 100%;
+        /*        display: block;*/
+        background: red;
+    }
+
+    div.course_card:hover {
+        transform: scale(105%);
+    }
+
+    div.course_card div.course_card_img {
+        border-top-left-radius: 1vw;
+        border-top-right-radius: 1vw;
+        background: rgba(0,0,0,0.7);
+        background-position: center center !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        filter: brightness(80%);
+        width: 100%;
+        height: 20vh;
+    }
+
+    div.course_card div.course_card_content {
+        padding: 5%;
+    }
+
+div.course_card_content div.course_card_tag_wrapper {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 0.5vw;
+    margin-bottom: 2vh;
+}
+
+div.course_card_tag_wrapper div.course_tag {
+    background-color: rgba(0,0,0,0.3);
+    padding: 1vh 0.5vw;
+    border-radius: 1vw;
+    min-width: 2vw;
+    font-size: 0.65vw;
+    text-align: center;
+}
+
+div.course_card_content .course_card_title {
+    min-height: 3vh;
+    font-size: 1.2vw;
+    color: #000;
+    font-weight: bold;
+    font-family: 'Poppins Bold';
+}
+
+div.course_card_content .course_card_shortDesc {
+    min-height: 5vh;
+    overflow: hidden;
+    font-size: 0.9vw;
+    margin: 3vh 0;
+    color: #000;
+}
+
+div.course_card_content div.course_card_langPrice_wrapper {
+    width: 100%;
+    display: flex;
+}
+
+div.course_card_langPrice_wrapper div.course_card_lang,
+div.course_card_langPrice_wrapper div.course_card_price,
+div.course_card_langPrice_wrapper div.course_card_enrol {
+    display: flex;
+    margin-right: 1vw;
+    font-size: 1vw;
+    font-weight: bold;
+    color: #000;
+}
+
+div.course_card_lang p,
+div.course_card_price p,
+div.course_card_enrol p {
+    padding: 0 0.5vw;
+    font-size: 0.8vw;
+    font-weight: lighter;
+}
+
+
+/*=======================*/
+/*  NO COURSE AVAILABLE  */
+/*=======================*/
+div.noCourse_wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+    div.noCourse_wrapper div.no_courseImg {
+        background-image: url("../Images/icons/icon_noResult.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        opacity: 0.4;
+        margin: 3vh auto;
+        width: 7vw;
+        height: 7vw;
+    }
+
+    div.noCourse_wrapper h3 {
+        font-size: 2vw;
+        font-weight: bold;
+        line-height: 5vh;
+    }
+
+    div.noCourse_wrapper p {
+        font-size: 1vw;
+        opacity: 0.6;
+        line-height: 5vh;
+    }
+
+    div.noCourse_wrapper ul {
+        width: fit-content;
+        margin: 2vh auto;
+    }
+
+        div.noCourse_wrapper ul > li {
+            font-size: 1vw;
+            line-height: 3vh;
+        }
+
+    div.noCourse_wrapper div.no_course_btnWrapper {
+        padding: 2vh 0;
+        display: flex;
+        gap: 2vw;
+        justify-content: center;
+    }
+
+div.no_course_btnWrapper .noCourseBtn {
+    padding: 0.7vw;
+    background: none;
+    color: #fff;
+    border: 0.2vw solid #fff;
+    border-radius: 0.5vw;
+    font-size: 1.2vw;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+    div.no_course_btnWrapper .noCourseBtn:hover {
+        background: #fff;
+        color: #000;
+    }
+
+
+.courseCountLabel {
+    margin-bottom: 5vh;
+    display: block;
+    font-size: 1vw;
+}

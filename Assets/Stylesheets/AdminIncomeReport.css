@@ -1,0 +1,137 @@
+﻿body {
+}
+
+#IncomeReportParent {
+    height: 20vh;
+}
+
+#IncomeReportHeading {
+    font-size: 10vh;
+}
+
+
+
+/*data field parent*/
+.DataFieldParent {
+    padding-top: 5vh;
+    display: flex;
+    width: max-content;
+    height: 30vh;
+}
+
+
+/*data field*/
+
+.DataParent {
+    width: max-content;
+    display: flex;
+    margin-left: 16vh;
+    height: 10vh;
+    background-color: #35333a;
+    border-radius: 2vh;
+    padding-right: 15vh;
+}
+
+.IconImage {
+    width: 10vh;
+    background-color: #5b5575;
+    border-radius: 1vh;
+}
+
+.DataClass {
+    text-align: center;
+    padding-left: 10vh;
+    height: 10vh;
+    width: max-content;
+    color: white;
+}
+
+.Data {
+    font-size: 3vh;
+}
+
+.DatabaseNumber {
+    font-size: 7vh;
+}
+
+
+/*Report Field*/
+
+.endData {
+    border-bottom: 2px solid white;
+}
+
+.subtopic {
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+}
+/*Report Data*/
+#Report {
+    display: flex;
+    width: 70vh;
+    height: 90vh;
+    font-size: 7vh;
+    margin-left: 5vh;
+    border: 1px solid white;
+}
+
+#ReportParent {
+    padding-top: 3vh;
+}
+
+.ReportDetail {
+    width: max-content;
+    height: max-content;
+    padding-top: 5vh;
+    word-spacing: 3vh;
+    border-collapse: separate;
+}
+
+#ReporTable {
+    font-size: 3vh;
+    width: max-content;
+    margin-left: 7vh;
+}
+
+td {
+    padding-top: 1vh;
+    height: 10vh;
+}
+
+h1 {
+    text-align: center;
+    margin-left: 10vh;
+}
+
+#NetPayCalc {
+    font-weight: 1000;
+}
+
+.SelectionDiv {
+    width: 50vh;
+    height: 40vh;
+}
+
+.AdminSelection,
+.Selected {
+    border-radius: 3vh;
+    font-size: 4vh;
+    height: 10vh;
+}
+
+
+
+.Generated {
+    width: 40vh;
+    height: 10vh;
+    border-radius: 2vh;
+    border: 1px solid white;
+    color: white;
+    background-color: black;
+}
+
+    .Generated:hover {
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+    }

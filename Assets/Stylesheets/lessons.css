@@ -1,0 +1,329 @@
+﻿.space {
+    margin-top: 30px;
+}
+
+section {
+    margin: auto;
+}
+
+.header {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.lesson_content {
+    margin-left: 140px;
+    margin-right: 200px;
+}
+
+.create_button {
+    margin-top: 70px;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    width: fit-content;
+    font-size: 1vw;
+    padding: 2.2vh 2vw;
+    border-radius: 0.5vw;
+    border: 0.1vw solid white;
+    position: relative;
+    z-index: 1;
+}
+
+    .create_button > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .create_button::before {
+        border-radius: 0.4vw;
+        z-index: 0;
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: #fff;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .create_button:hover::before {
+        width: 100%;
+    }
+
+    .create_button:hover a {
+        color: #000000;
+    }
+
+.lesson-container {
+    margin-top: 15px;
+    background-color: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lesson-header {
+    height: 60px;
+    background: #212f3c;
+    margin-bottom: 15px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: 1px solid white;
+    display: flex; /* Enables Flexbox */
+    align-items: center; /* Centers content vertically */
+    padding-left: 30px; /* Adds space to the left for the title */
+}
+
+.lesson-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin: 0; /* Removes any default margin */
+}
+
+.lesson-desc {
+    padding-top: 5px;
+    padding-left: 20px;
+    font-size: 16px;
+    color: white;
+    vertical-align: middle;
+}
+
+.material-container {
+    padding-top: 5px;
+    padding-left: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid white;
+}
+
+.material-box {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    margin: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+    color: #333;
+}
+
+    .material-box:hover {
+        transform: scale(1.05);
+    }
+
+.material-thumbnail {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.material-name {
+    color: white;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.upload-button {
+    background: #1c2833;
+    display: inline-flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Align items vertically */
+    width: 150px;
+    text-align: center;
+    margin: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+    color: #333;
+    height: 215px;
+    justify-content: center; /* Vertically center the content */
+}
+
+    .upload-button:hover {
+        transform: scale(1.05);
+    }
+
+    .upload-button p {
+        line-height: 30px;
+        letter-spacing: 1.5px;
+        font-size: 20px;
+        color: white;
+        margin: 0; /* Remove any default margin to ensure perfect centering */
+    }
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-panel {
+    color: black;
+    position: relative;
+    z-index: 10000;
+}
+
+.modal-content {
+    background-color: #fff;
+    width: 70%;
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    background-color: #1c2833;
+    color: #fff;
+}
+
+.modal-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+    .modal-body .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-body label {
+        font-weight: bold;
+    }
+
+    .modal-body .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: border-color 0.2s ease-in-out;
+        resize: none;
+    }
+
+        .modal-body .form-control:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+}
+
+    .modal-footer .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .modal-footer .btn:hover {
+            background-color: #0056b3;
+        }
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+    .close-btn:hover {
+        color: #ff0000;
+    }
+
+.required {
+    color: red;
+    margin-left: 5px;
+}
+
+/* Center the panel horizontally */
+.center-panel {
+    margin-top: -80px;
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    width: 100%; /* Ensures the container takes up full width */
+}
+
+/* Button style */
+.create_button {
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: black; /* Blue button */
+    color: white;
+    border: 1px white solid;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    /* Button hover effect */
+    .create_button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+
+.no_content {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 80%;
+    margin-top: 20px;
+}
+
+    .no_content h1 {
+        font-size: 50px;
+    }

@@ -1,0 +1,80 @@
+﻿body {
+}
+
+/*My Course Heading*/
+
+#CourseReport {
+    height:500px;
+}
+
+#ReportMCParent {
+    height: 100px;
+}
+
+
+
+#ReportMCHead {
+    font-size: 50px;
+}
+
+hr {
+    margin-left: 1px;
+    margin-top: 25px;
+    border: 2px solid white;
+    width: 1250px;
+}
+
+
+/*First Course*/
+
+#Course1{
+    margin-top:30px;
+    display:inline-block;
+    width:320px;
+    height: 268px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#Course1:hover {
+    transform: scale(1.05);
+}
+#BlockClass1 {
+    width: 320px;
+    height: 268px;
+    border: 3px solid white;
+    border-radius:20px;
+}
+
+#Course1Image{
+    width:100%;
+    height:75%;
+    display:flex;
+    border-radius:20px;
+}
+
+#Course1NameBlock {
+    width: 100%;
+    height: 20%;
+   
+}
+
+
+#CourseCode1 {
+    font-size: 30px;
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+
+#Course1NameBlock {
+    width: 100%;
+    height: 5%;
+    margin-top:10px;
+}
+
+#Course1Name {
+    font-size: 14px;
+    display: grid;
+    place-items: center;
+    height: 100%;
+}

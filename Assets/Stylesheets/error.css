@@ -1,0 +1,89 @@
+﻿section#errorHero {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 12vh 0;
+    height: fit-content;
+    align-content: center;
+}
+
+    section#errorHero div.error404Img {
+        display: block;
+        width: 100vh;
+        height: 60vh;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+div.error404Img::before {
+    position: absolute;
+    content: 'ss';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 80%;
+    z-index: -100;
+    background: linear-gradient(rgb(239, 114, 253),rgb(148, 170, 255), rgb(144, 248, 255));
+    filter: blur(1vw);
+    opacity: 0.7;
+    clip-path: circle(50%);
+}
+
+
+section#errorHero div.errorAppImg {
+    display: block;
+    width: 100vh;
+    height: 60vh;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+div.errorAppImg::before {
+    position: absolute;
+    content: 'ss';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 25%);
+    width: 100%;
+    height: 50%;
+    z-index: -100;
+    background: linear-gradient(rgb(255,255,255,0.1), rgb(255,255,255,0.8), rgb(0,0,0));
+    filter: blur(1vw);
+    opacity: 0.7;
+    clip-path: polygon(0 0, 50% 0, 100% 100%, 50% 100%);
+}
+
+div.errorMsg_wrapper {
+    width: 50%;
+    display: block;
+    align-content: center;
+    text-align: center;
+}
+
+    div.errorMsg_wrapper h2.errorMsg_title {
+        font-size: 2vw;
+        padding: 0 0 2vh 0;
+    }
+
+    div.errorMsg_wrapper p.errorMsg_desc {
+        font-size: 1vw;
+        margin: 0 auto;
+        padding: 3vh 0;
+    }
+
+p.errorMsg_desc span {
+    display: block;
+    padding: 0.5vh 0;
+}
+
+div.errorActions {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    margin: 1vh 0;
+}

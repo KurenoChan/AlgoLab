@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+	<siteMapNode url="~/Home.aspx" title="Home" description="Home Page">
+
+		<siteMapNode url="~/Course.aspx" title="Courses" description="Browse all courses">
+			<siteMapNode url="~/CourseDetails.aspx" title="Course Details" description="View Course Details"/>
+			<siteMapNode url="~/User/Payment.aspx" title="Payment" description="Complete Payment" />
+			<siteMapNode url="~/User/Lesson.aspx" title="Lessons" description="Access Course Lessons" />
+		</siteMapNode>
+
+		<siteMapNode url="" title="Company" description="Company">
+			<siteMapNode url="~/About.aspx" title="About" description="About Page" />
+			<siteMapNode url="~/Support.aspx" title="Support" description="Support Page" />
+			<siteMapNode url="~/User/Feedback.aspx" title="System Feedback" description="System Feedback Page" />
+		</siteMapNode>
+
+
+		<siteMapNode url="~/AccountSelect.aspx" title="Account" description="Account Management">
+			<siteMapNode url="~/Login.aspx" title="Login" description="Login Page" />
+			<siteMapNode url="~/SignUp.aspx" title="Sign Up" description="Sign Up Page" />
+			<siteMapNode url="~/ForgetPassword.aspx" title="Forgot Password" description="Recover Account Password" />
+		</siteMapNode>
+
+		<siteMapNode url="" title="Error Pages" description="Error Pages">
+			<siteMapNode url="~/ErrorPages/Error404.aspx" title="Error 404" description="Page Not Found" />
+			<siteMapNode url="~/ErrorPages/ErrorApp.aspx" title="Application Error" description="Application Error Page" />
+		</siteMapNode>
+
+		<siteMapNode url="~/User/Profile.aspx" title="Profile" description="User Profile">
+			<siteMapNode url="~/User/BecomeTutor.aspx" title="Become a Tutor" description="Apply to Become a Tutor" />
+		</siteMapNode>
+
+		<siteMapNode url="" title="Management" description="Management">
+			<siteMapNode url="~/Management/AdminInterface.aspx" title="Admin Interface" description="Admin Panel">
+				<siteMapNode url="~/Management/ApproveTutor.aspx" title="Approve Tutors" description="Manage Tutor Approvals" />
+				<siteMapNode url="~/Management/TutorIncomeReport.aspx" title="Tutor Income Report" description="Tutor Income Report" />
+			</siteMapNode>
+
+
+			<siteMapNode url="~/Management/CourseManagement.aspx" title="Approve Tutors" description="Manage Tutor Approvals" />
+
+			<siteMapNode url="~/Management/Report.aspx" title="Reports" description="View Reports">
+				<siteMapNode url="~/Management/ReportCourse1.aspx" title="Course Report" description="Detailed Course Report" />
+			</siteMapNode>
+
+		</siteMapNode>
+	</siteMapNode>
+</siteMap>
